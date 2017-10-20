@@ -1,4 +1,4 @@
-<h1> Add a new restaurant!</h1>
+<h1> Add a New restaurant!</h1>
 
 <%= form_with scope: :restaurant, url: restaurants_path, local: true do |form| %>
   <p>
@@ -15,3 +15,5 @@
     <%= form.submit %>
   </p>
 <% end %>
+
+<%= link_to 'Back', restaurants_path %>
