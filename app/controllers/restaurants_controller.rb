@@ -8,6 +8,10 @@ def new
   @restaurant = Restaurant.new
 end
 
+def edit
+  @restuarant = Restaurant.find(params[:id])
+end
+
 def show
   @restaurant = Restaurant.find(params[:id])
 end
@@ -19,6 +23,20 @@ def create
     redirect_to @restaurant
   else
     render 'new'
+  end
+end
+
+def edit
+  @restaurant = Restaurant.find(params[:id])
+end
+
+def update
+  @restaurant = Restaurant.find(params[:id])
+
+  if @restaurant.update(restaurant_params)
+    redirect_to @restaurant
+  else
+    render 'edit'
   end
 end
 
